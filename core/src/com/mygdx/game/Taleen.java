@@ -12,6 +12,9 @@ public class Taleen {
     Level level;
     Texture texture;
     Viewport viewport;
+    public boolean fireButtonPressed;
+    public boolean leftButtonPressed;
+    public boolean rightButtonPressed;
 
     public Taleen(Vector2 position, Level level, Viewport viewport) {
         this.position = position;
@@ -22,13 +25,13 @@ public class Taleen {
 
     public void update(float delta) {
 
-        if (Gdx.input.isKeyPressed(Input.Keys.RIGHT)) {
+        if (Gdx.input.isKeyPressed(Input.Keys.RIGHT ) || rightButtonPressed) {
             moveright(delta);
         }
-        if (Gdx.input.isKeyPressed(Input.Keys.LEFT)) {
+        if (Gdx.input.isKeyPressed(Input.Keys.LEFT) || leftButtonPressed) {
             moveleft(delta);
         }
-        if (Gdx.input.isKeyJustPressed(Input.Keys.CONTROL_LEFT)) {
+        if (Gdx.input.isKeyJustPressed(Input.Keys.CONTROL_LEFT) || fireButtonPressed) {
             shoot();
         }
 

@@ -53,7 +53,7 @@ public class GameplayScreen extends ScreenAdapter {
         level = new Level(viewport);
         background = new Texture("BACKGROUND.jpg");
         onScreenControls = new OnScreenControls();
-
+        Gdx.input.setInputProcessor(onScreenControls);
 
         }
 
